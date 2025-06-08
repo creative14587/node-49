@@ -1,12 +1,12 @@
-CREATE DATABASE restaurant_db;
-USE restaurant_db;
+CREATE DATABASE db_food;
+USE db_food;
 
 -- Bảng user
 CREATE TABLE user (
     user_id INT AUTO_INCREMENT PRIMARY KEY not NULL,
     full_name VARCHAR(255),
     email VARCHAR(255),
-    password VARCHAR(255)
+    pass VARCHAR(255)
 );
 
 -- Bảng food_type
@@ -19,9 +19,9 @@ CREATE TABLE food_type (
 CREATE TABLE food (
     food_id INT AUTO_INCREMENT PRIMARY KEY not NULL,
     food_name VARCHAR(255),
-    image VARCHAR(255),
+    pic VARCHAR(255),
     price FLOAT,
-    `desc` VARCHAR(255),
+    info VARCHAR(255),
     type_id INT,
     FOREIGN KEY (type_id) REFERENCES food_type(type_id)
 );
@@ -39,8 +39,8 @@ CREATE TABLE sub_food (
 CREATE TABLE restaurant (
     res_id INT AUTO_INCREMENT PRIMARY KEY not NULL,
     res_name VARCHAR(255),
-    `image` VARCHAR(255),
-    `desc` VARCHAR(255)
+    picture VARCHAR(255),
+    info VARCHAR(255)
 );
 
 -- Bảng order
